@@ -1,6 +1,3 @@
-# Statement:
-# Given a list of lowercase characters, move all the vowels to the end of the list in-place. Maintain the relative order of consonants and vowels.
-
 def move_vowels_to_the_end(s):
     vowels = set("aeiou")
     n = len(s)
@@ -19,6 +16,3 @@ def move_vowels_to_the_end(s):
             index += 1
 
     return s
-
-
-print(move_vowels_to_the_end(['a', 'b', 'c', 'e', 'f', 'i', 'o', 'u', 'd']))
