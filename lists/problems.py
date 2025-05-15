@@ -75,3 +75,44 @@ def flatten_2d_list(matrix):
 # Example
 matrix = [[1, 2], [3, 4], [5, 6]]
 print(flatten_2d_list(matrix))  # Output: [1, 2, 3, 4, 5, 6]
+
+# Check if a list is a palindrome.
+def is_palindrome(lst):
+    left = 0
+    right = len(lst) - 1
+
+    while left < right:
+        if lst[left] != lst[right]:
+            return False
+        left += 1
+        right -= 1
+
+    return True
+
+# Example usage:
+print(is_palindrome([1, 2, 3, 2, 1]))  # True
+print(is_palindrome([1, 2, 3, 4, 5]))  # False
+
+# Rotate a list to the right by k steps.
+# [1, 2, 3, 4, 5], k = 2 → [4, 5, 1, 2, 3]
+
+def rotateArray(arr,k):
+    n = len(arr)
+    k %= n
+
+    # Step 1: Reverse the whole array
+    reverse(arr,0,n-1)
+    # Step 2: Reverse the remaining 'n - d' elements
+    reverse(arr,0,k-1)
+    # Step 3: Reverse the first 'd' elements
+    reverse(arr,k,n-1)
+    return arr
+
+def reverse(arr,start,end):
+    while start < end:
+        arr[start],arr[end] = arr[end],arr[start]
+        start += 1
+        end -= 1
+
+
+print(rotateArray([1,2,3,4,5],2))
