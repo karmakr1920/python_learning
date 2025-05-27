@@ -38,18 +38,18 @@ def list_expenses():
     return expenses
 
 
-def add_expense(amount, category, date, note):
+def add_expense(amount, category, date, note,recurring):
     # Check for duplicate
     cursor.execute(
-        "SELECT * FROM expenses WHERE amount = ? AND category = ? AND date = ? AND note = ?",
-        (amount, category, date, note)
+        "SELECT * FROM expenses WHERE amount = ? AND category = ? AND date = ? AND note = ? AND recurring = ?",
+        (amount, category, date, note,recurring)
     )
     if cursor.fetchone():
         print("Duplicate expense found. Expense not added.")
         return
     cursor.execute(
-        "INSERT INTO expenses(amount, category, date, note) VALUES (?, ?, ?, ?)",
-        (amount, category, date, note)
+        "INSERT INTO expenses(amount, category, date, note,recurring) VALUES (?, ?, ?, ?,?)",
+        (amount, category, date, note,recurring)
     )
     conn.commit()
     print("Expense added successfully.")
