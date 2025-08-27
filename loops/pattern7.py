@@ -12,16 +12,27 @@ Space Complexity :O(1). As no extra space is being used to print the patterns.
 """
 
 n = int(input())
-for i in range(0,n):
+# for i in range(0,n):
             
-    #This loop will print the spaces
-    for j in range(0, (n-i-1)):
-        print(" ",end="")
+#     #This loop will print the spaces
+#     for j in range(0, (n-i-1)):
+#         print(" ",end="")
     
-    # This loop will print asterisk.
-    for j in range(0,2*i+1):
-        print("*", end="")
+#     # This loop will print asterisk.
+#     for j in range(0,2*i+1):
+#         print("*", end="")
 
-    """ As soon as n stars are printed, move
-    to the next row and give a line break."""
+#     """ As soon as n stars are printed, move
+#     to the next row and give a line break."""
+#     print()
+"""
+   *      i = 1   space = n - i = 3 - 1 = 2 for star, 2 * i - 1= 2
+  * *     i = 2   space = n - i = 3 - 2 = 1
+* * * * * i = 3   space = n - i = 3 - 0
+"""
+for i in range(1,n+1):
+    for j in range(n-i):
+        print(" ",end="")
+    for j in range(2*i-1):
+        print("*",end="")
     print()
