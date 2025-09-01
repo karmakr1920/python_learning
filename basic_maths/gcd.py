@@ -1,4 +1,4 @@
-def GCD(self, n1, n2):
+def GCD(n1, n2):
     # Variable to store the gcd
     gcd = 1
     
