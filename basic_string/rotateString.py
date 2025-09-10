@@ -10,3 +10,5 @@ class Solution:
 sol = Solution()
 print(sol.rotateString("abcde", "cdeab")) 
 print(sol.rotateString("abcde", "abced")) 
+
+#revised the strings sesions
